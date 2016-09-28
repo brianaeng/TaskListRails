@@ -7,6 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <nav>
+      <%= link_to("Home", index_path) %>
+      <%= link_to("Add New Task", new_path) %>
+    </nav>
+  </header>
 
 <%= yield %>
 

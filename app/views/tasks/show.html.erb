@@ -1,5 +1,5 @@
+<h1><%= @task[:title] %></h1>
 <article>
-  <h1><%= @task[:title] %></h1>
   <h4>Description: </h4>
   <p>
     <%= @task[:description] %>
@@ -7,9 +7,13 @@
   <h4>Status: </h4>
   <p>
     <% if @task[:completion] == true %>
-      Done at: <%= @task[:completed_at] %>
+      Done @ <%= @task[:completed_at] %>
     <% else %>
       Still in progress
     <% end %>
   </p>
 </article>
+<div>
+  <h5><%= link_to("Edit", edit_path(@task[:id])) %></h5>
+  <h5><%= link_to("Delete", destroy_path(@task[:id])) %></h5>
+</div>

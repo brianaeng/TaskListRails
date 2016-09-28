@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  # skip_before_filter :verify_authenticity_token #NOT SURE IF NEEDED??
+
   def index
     @alltasks = TasksController.alltasks
   end
@@ -27,9 +29,11 @@ class TasksController < ApplicationController
   end
 
   def edit
+    show
   end
 
   def update
+    show
   end
 
   def destroy
@@ -37,9 +41,9 @@ class TasksController < ApplicationController
 
   def self.alltasks
     [
-      {id: 1, title: "Do app", description: "Creating rails app", completion: true, completed_at: "9/28"},
+      {id: 1, title: "Do app", description: "Creating rails app", completion: true, completed_at: "noon 9/28"},
       {id: 2, title: "Eat", description: "Eat food", completion: false, completed_at: nil},
-      {id: 3, title: "Sleep", description: "Get lots of sleep", completion: true, completed_at: "9/27"}
+      {id: 3, title: "Sleep", description: "Get lots of sleep", completion: true, completed_at: "8am 9/27"}
     ]
   end
 end
