@@ -1,0 +1,15 @@
+<article>
+  <h1><%= @task[:title] %></h1>
+  <h4>Description: </h4>
+  <p>
+    <%= @task[:description] %>
+  </p>
+  <h4>Status: </h4>
+  <p>
+    <% if @task[:completion] == true %>
+      Done at: <%= @task[:completed_at] %>
+    <% else %>
+      Still in progress
+    <% end %>
+  </p>
+</article>
