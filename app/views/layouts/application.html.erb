@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TaskListRails</title>
+  <title>Task List</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,8 +9,8 @@
 <body>
   <header>
     <nav>
-      <%= link_to("Home", index_path) %>
-      <%= link_to("Add New Task", new_path) %>
+      <%= link_to_unless_current("Home", root_path) %>
+      <%= link_to_unless_current("Add New Task", new_path) %>
     </nav>
   </header>
 

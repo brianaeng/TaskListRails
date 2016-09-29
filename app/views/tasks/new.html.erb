@@ -1,12 +1,12 @@
 <h1>Add a Task</h1>
 <article>
-  <form action="create" name="edit">
-    <label for="title">Title</label>
-    <input type="text" name="title" id="title" />
+  <%= form_for @task, url: create_path do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title%>
 
-    <label for="description">Description</label>
-    <input type="text" name="description" id="description" />
+    <%= f.label :description %>
+    <%= f.text_area :description %>
 
-    <input type="submit" name="Submit Task"/>
-  </form>
+    <%= f.submit %>
+  <% end %>
 </article>

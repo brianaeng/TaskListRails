@@ -46,8 +46,14 @@ nav {
   border-bottom: black 1px solid;
 }
 
-nav a {
-  margin: 20px;
+input[type="text"], textarea, label {
+  width : 100%;
+  margin: 0;
+  display: block;
+}
+
+input[type="submit"] {
+  margin: 0 auto;
 }
 
 footer {

@@ -1,28 +1,12 @@
 class TasksController < ApplicationController
-  # skip_before_filter :verify_authenticity_token #NOT SURE IF NEEDED??
 
   def index
-    @alltasks = TasksController.alltasks
+    @tasks = Task.all
   end
 
   def show
-    @alltasks = TasksController.alltasks
-    @task = nil
+    @task = Task.find(params[:id])
 
-    num = params[:id].to_i
-
-    @alltasks.each do |task|
-      if task[:id] == num
-        @task = task
-      end
-    end
-
-    if @task == nil
-      render :file => 'public/404.html', :status => :not_found, :layout => false
-    end
-
-    @status = nil
-    
     if @task[:completion] == true
       @status = "Done at #{@task[:completed_at]}"
     else
@@ -30,28 +14,41 @@ class TasksController < ApplicationController
     end
   end
 
-  def create
+  def new
+    @task = Task.new
   end
 
-  def new
+  def create
+    @task = Task.new
+
+    @task.title = params[:task][:title]
+    @task.description = params[:task][:description]
+    @task.completed_at = params[:task][:completed_at]
+
+    @task.save
+
+    redirect_to root_path
   end
 
   def edit
-    show
+    @task = Task.find(params[:id])
   end
 
   def update
-    show
+    @task = Task.find(params[:id])
+
+    @task.title = params[:post][:title]
+    @task.description = params[:post][:description]
+    @task.completed_at = params[:post][:completed_at]
+
+    @task.save
   end
 
   def destroy
-  end
+    @task = Task.find(params[:id])
 
-  def self.alltasks
-    [
-      {id: 1, title: "Do app", description: "Creating rails app", completion: true, completed_at: "noon 9/28"},
-      {id: 2, title: "Eat", description: "Eat food", completion: false, completed_at: nil},
-      {id: 3, title: "Sleep", description: "Get lots of sleep", completion: true, completed_at: "8am 9/27"}
-    ]
+    @task.destroy
+
+    redirect_to root_path
   end
 end
