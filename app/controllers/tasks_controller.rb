@@ -20,6 +20,14 @@ class TasksController < ApplicationController
     if @task == nil
       render :file => 'public/404.html', :status => :not_found, :layout => false
     end
+
+    @status = nil
+    
+    if @task[:completion] == true
+      @status = "Done at #{@task[:completed_at]}"
+    else
+      @status = "Still in progress"
+    end
   end
 
   def create

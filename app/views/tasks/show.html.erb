@@ -6,11 +6,12 @@
   </p>
   <h4>Status: </h4>
   <p>
-    <% if @task[:completion] == true %>
+    <!-- <% if @task[:completion] == true %>
       Done @ <%= @task[:completed_at] %>
     <% else %>
       Still in progress
-    <% end %>
+    <% end %> -->
+    <%= @status %>
   </p>
 </article>
 <div>

@@ -7,11 +7,11 @@
     <label for="description">Description</label>
     <input type="text" name="description" id="description" value="<%= @task[:description] %>" />
 
-    <% if @task[:completion] == false %>
+    <%# if @task[:completion] == false %>
       <label for="completed_at">Completed At:</label>
       <input type="text" name="completed_at" id="completed_at" />
-    <% end %>
-    
+    <%# end %>
+
     <input type="submit" name="Update Task"/>
   </form>
 </article>
