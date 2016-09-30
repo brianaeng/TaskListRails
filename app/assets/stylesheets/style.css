@@ -63,6 +63,6 @@ footer {
   padding: 1em;
 }
 
-.done {
+.done span {
   text-decoration: line-through;
 }

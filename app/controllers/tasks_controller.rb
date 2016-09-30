@@ -38,7 +38,11 @@ class TasksController < ApplicationController
   def button
     @task = Task.find(params[:id])
 
-    @task.completed_at = Time.now
+    if @task.completed_at == nil
+      @task.completed_at = Time.now
+    else
+      @task.completed_at = nil
+    end
 
     @task.save
 

@@ -10976,3 +10976,974 @@ Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-30 10:28:30 -0700
+
+
+Started GET "/" for ::1 at 2016-09-30 10:29:51 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 320ms (Views: 308.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/style.self-b3d3c05d936f3e16b5bc2017f1c07b6982db4f1eb779a2c90efe5fd4d7ea3102.css?body=1" for ::1 at 2016-09-30 10:29:51 -0700
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-30 10:29:51 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-30 10:29:51 -0700
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-30 10:29:51 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-30 10:29:51 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 10:29:51 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 10:29:51 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 10:29:51 -0700
+
+
+Started GET "/" for ::1 at 2016-09-30 10:29:52 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 20ms (Views: 19.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/style.self-b3d3c05d936f3e16b5bc2017f1c07b6982db4f1eb779a2c90efe5fd4d7ea3102.css?body=1" for ::1 at 2016-09-30 10:29:52 -0700
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-30 10:29:52 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 10:29:52 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 10:29:52 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 10:29:52 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-30 10:29:52 -0700
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-30 10:29:52 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-30 10:29:52 -0700
+
+
+Started GET "/tasks/show/12" for ::1 at 2016-09-30 10:29:53 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 12]]
+  Rendered tasks/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 29ms (Views: 16.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-09-30 10:29:54 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (1.0ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 43ms (Views: 41.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2016-09-30 10:29:58 -0700
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 26ms (Views: 25.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/style.self-ce4c75c3c9e848fdbcf73d136bb91a40bacaa0b0380ddcf8a4446003916d4ba6.css?body=1" for ::1 at 2016-09-30 10:29:58 -0700
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-30 10:29:59 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 10:29:59 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 10:29:59 -0700
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-30 10:29:59 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 10:29:59 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-30 10:29:59 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-30 10:29:59 -0700
+
+
+Started GET "/" for ::1 at 2016-09-30 10:29:59 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/style.self-ce4c75c3c9e848fdbcf73d136bb91a40bacaa0b0380ddcf8a4446003916d4ba6.css?body=1" for ::1 at 2016-09-30 10:29:59 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 10:29:59 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-30 10:29:59 -0700
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-30 10:29:59 -0700
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-30 10:29:59 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 10:29:59 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 10:29:59 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-30 10:29:59 -0700
+
+
+Started GET "/" for ::1 at 2016-09-30 10:48:51 -0700
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-09-30 10:50:36 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 42ms (Views: 41.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/style.self-7eae9af17f0b777879a070edef2b100f5ca8d5007644b2b40a7c66e99c1b7974.css?body=1" for ::1 at 2016-09-30 10:50:36 -0700
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-30 10:50:36 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 10:50:36 -0700
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-30 10:50:36 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 10:50:36 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-30 10:50:36 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 10:50:36 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-30 10:50:36 -0700
+
+
+Started GET "/" for ::1 at 2016-09-30 10:54:37 -0700
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 34ms (Views: 33.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/style.self-f691812960df3c7bc101ad6ab0daa7f0facb5cb001579f93d994058e0ecbf2af.css?body=1" for ::1 at 2016-09-30 10:54:37 -0700
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-30 10:54:37 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-30 10:54:37 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 10:54:37 -0700
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-30 10:54:37 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 10:54:37 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 10:54:37 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-30 10:54:37 -0700
+
+
+Started GET "/" for ::1 at 2016-09-30 10:54:53 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 31ms (Views: 30.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/style.self-233bbb79262053432537b463dc6f336276254e0fdb33d4daa0b5ea0a117c5b10.css?body=1" for ::1 at 2016-09-30 10:54:53 -0700
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-30 10:54:53 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 10:54:53 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-30 10:54:53 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 10:54:53 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 10:54:53 -0700
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-30 10:54:53 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-30 10:54:53 -0700
+
+
+Started GET "/" for ::1 at 2016-09-30 10:58:27 -0700
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 41ms (Views: 40.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/style.self-c6cfcbc14c76f9d5f278965694089331237bf237d9ce68b774a5a000a76f1d8a.css?body=1" for ::1 at 2016-09-30 10:58:27 -0700
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-30 10:58:27 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 10:58:27 -0700
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-30 10:58:27 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-30 10:58:27 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 10:58:27 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-30 10:58:27 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 10:58:27 -0700
+
+
+Started GET "/tasks/show/12" for ::1 at 2016-09-30 10:58:28 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 12]]
+  Rendered tasks/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 26ms (Views: 23.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-09-30 10:58:29 -0700
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 38ms (Views: 37.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-09-30 10:58:55 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 34ms (Views: 33.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/style.self-e6676991540c6c7c414c5c2fff10623ffeb9d1c781a96c6a7f98a7cccb5ebb6e.css?body=1" for ::1 at 2016-09-30 10:58:55 -0700
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-30 10:58:55 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 10:58:55 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 10:58:55 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 10:58:55 -0700
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-30 10:58:55 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-30 10:58:55 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-30 10:58:55 -0700
+
+
+Started GET "/" for ::1 at 2016-09-30 10:59:25 -0700
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 20ms (Views: 19.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/style.self-c6cfcbc14c76f9d5f278965694089331237bf237d9ce68b774a5a000a76f1d8a.css?body=1" for ::1 at 2016-09-30 10:59:25 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 10:59:25 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 10:59:25 -0700
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-30 10:59:25 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-30 10:59:25 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 10:59:25 -0700
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-30 10:59:25 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-30 10:59:25 -0700
+
+
+Started GET "/" for ::1 at 2016-09-30 10:59:26 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/style.self-c6cfcbc14c76f9d5f278965694089331237bf237d9ce68b774a5a000a76f1d8a.css?body=1" for ::1 at 2016-09-30 10:59:26 -0700
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-30 10:59:26 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 10:59:26 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-30 10:59:26 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 10:59:26 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-30 10:59:26 -0700
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-30 10:59:26 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 10:59:26 -0700
+
+
+Started GET "/" for ::1 at 2016-09-30 11:00:22 -0700
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/style.self-7eae9af17f0b777879a070edef2b100f5ca8d5007644b2b40a7c66e99c1b7974.css?body=1" for ::1 at 2016-09-30 11:00:22 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-30 11:00:22 -0700
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-30 11:00:22 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 11:00:22 -0700
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-30 11:00:22 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-30 11:00:22 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 11:00:22 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 11:00:22 -0700
+
+
+Started GET "/" for ::1 at 2016-09-30 11:00:39 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/style.self-7eae9af17f0b777879a070edef2b100f5ca8d5007644b2b40a7c66e99c1b7974.css?body=1" for ::1 at 2016-09-30 11:00:39 -0700
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-30 11:00:39 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 11:00:39 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 11:00:39 -0700
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-30 11:00:39 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 11:00:39 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-30 11:00:39 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-30 11:00:39 -0700
+
+
+Started GET "/" for ::1 at 2016-09-30 11:00:40 -0700
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/style.self-7eae9af17f0b777879a070edef2b100f5ca8d5007644b2b40a7c66e99c1b7974.css?body=1" for ::1 at 2016-09-30 11:00:40 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 11:00:40 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-30 11:00:40 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 11:00:40 -0700
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-30 11:00:40 -0700
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-30 11:00:40 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 11:00:40 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-30 11:00:40 -0700
+
+
+Started GET "/" for ::1 at 2016-09-30 11:00:52 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/style.self-7eae9af17f0b777879a070edef2b100f5ca8d5007644b2b40a7c66e99c1b7974.css?body=1" for ::1 at 2016-09-30 11:00:52 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-30 11:00:52 -0700
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-30 11:00:52 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 11:00:52 -0700
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-30 11:00:52 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 11:00:52 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 11:00:52 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-30 11:00:52 -0700
+
+
+Started GET "/tasks/new" for ::1 at 2016-09-30 11:00:54 -0700
+Processing by TasksController#new as HTML
+  Rendered tasks/new.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 38ms (Views: 36.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tasks/create" for ::1 at 2016-09-30 11:01:00 -0700
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DJzCbe0VQzPkrYYgwtx4LaVtM9WlJUymf2xXnvmsfzae11+HdQbKyR8aqqSO1sz6q6ir7EZLnHlHZKECcTXlNw==", "task"=>{"title"=>"new task not done", "description"=>"testing"}, "commit"=>"Create Task"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tasks" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "new task not done"], ["description", "testing"], ["created_at", "2016-09-30 18:01:00.133093"], ["updated_at", "2016-09-30 18:01:00.133093"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2016-09-30 11:01:00 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-09-30 11:01:05 -0700
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/style.self-7eae9af17f0b777879a070edef2b100f5ca8d5007644b2b40a7c66e99c1b7974.css?body=1" for ::1 at 2016-09-30 11:01:05 -0700
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-30 11:01:05 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 11:01:05 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 11:01:05 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 11:01:05 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-30 11:01:05 -0700
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-30 11:01:05 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-30 11:01:05 -0700
+
+
+Started GET "/tasks/new" for ::1 at 2016-09-30 11:01:14 -0700
+Processing by TasksController#new as HTML
+  Rendered tasks/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 27ms (Views: 26.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-09-30 11:01:15 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 33ms (Views: 31.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/show/14" for ::1 at 2016-09-30 11:01:16 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[35mTask Load (0.3ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 14]]
+  Rendered tasks/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 32ms (Views: 27.2ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/tasks/14/show" for ::1 at 2016-09-30 11:01:17 -0700
+Processing by TasksController#button as HTML
+  Parameters: {"authenticity_token"=>"Tker6x4h5P3KLWkd+BJQbws217p0fh7He8Uq/pAIdfbcDDYBhjJtBzGaRZm0GOS4BfNPg5cQzhhDzdxiGJHv9w==", "id"=>"14"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 14]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "tasks" SET "completed_at" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["completed_at", "2016-09-30 18:01:17.922055"], ["updated_at", "2016-09-30 18:01:17.922603"], ["id", 14]]
+  [1m[35m (2.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/tasks/show/14
+Completed 302 Found in 6ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/tasks/show/14" for ::1 at 2016-09-30 11:01:17 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 14]]
+  Rendered tasks/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-09-30 11:01:19 -0700
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 25ms (Views: 24.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/show/14" for ::1 at 2016-09-30 11:01:20 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 14]]
+  Rendered tasks/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 36ms (Views: 33.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/14/edit" for ::1 at 2016-09-30 11:01:21 -0700
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 14]]
+  Rendered tasks/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/tasks/14/update" for ::1 at 2016-09-30 11:01:33 -0700
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a/FvrP0LUgarTSLR1w1vSru1GhdmWcXM3pCdTWnk0Ef5uvJGZRjb/FD6DlWbB9udtXCCLoU3FRPmmGvR4X1KRg==", "task"=>{"title"=>"new task not done", "description"=>"testing", "completed_at"=>"2016-08-30T18:01:17"}, "commit"=>"Update Task", "id"=>"14"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 14]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "tasks" SET "completed_at" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["completed_at", "2016-08-30 18:01:17.000000"], ["updated_at", "2016-09-30 18:01:33.340734"], ["id", 14]]
+  [1m[35m (2.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2016-09-30 11:01:33 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/show/14" for ::1 at 2016-09-30 11:01:34 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 14]]
+  Rendered tasks/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/tasks/14/edit" for ::1 at 2016-09-30 11:01:38 -0700
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 14]]
+  Rendered tasks/edit.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/tasks/14/update" for ::1 at 2016-09-30 11:01:42 -0700
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mPacjPdExC/j7zgWZa7GO6jUXZM5UT7JC3C25zgl6OQKvQFmb1dN1RhYFJIppHLsphHFqto/7hYzeEB7sLxy5Q==", "task"=>{"title"=>"new task not done", "description"=>"testing", "completed_at"=>"2016-08-31T18:01:17"}, "commit"=>"Update Task", "id"=>"14"}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 14]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "tasks" SET "completed_at" = ?, "updated_at" = ? WHERE "tasks"."id" = ?  [["completed_at", "2016-08-31 18:01:17.000000"], ["updated_at", "2016-09-30 18:01:42.952844"], ["id", 14]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/" for ::1 at 2016-09-30 11:01:42 -0700
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/tasks/show/14" for ::1 at 2016-09-30 11:01:44 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 14]]
+  Rendered tasks/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 36ms (Views: 34.7ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/tasks/14/destroy" for ::1 at 2016-09-30 11:01:46 -0700
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FTRWzeOFvHmv4L0A0hsD4yA2I2VEhGXXAarMHhqoXImHf8sne5Y1g1RXkYSeEbc0LvO7XKfqtQg5ojqCkjHGiA==", "id"=>"14"}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 14]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 14]]
+  [1m[36m (3.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/" for ::1 at 2016-09-30 11:01:46 -0700
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 17ms (Views: 16.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-09-30 11:01:48 -0700
+Processing by TasksController#new as HTML
+  Rendered tasks/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-09-30 11:01:49 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 43ms (Views: 40.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-09-30 11:01:51 -0700
+Processing by TasksController#new as HTML
+  Rendered tasks/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 34ms (Views: 33.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tasks/create" for ::1 at 2016-09-30 11:01:56 -0700
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KwfxWSCWXfKuW3PA1nDIJsC7oKXdAKScZF8nCjuIQxW5TGyzuIXUCFXsX0Saenzxzn44nD5udENcV9GWsxHZFA==", "task"=>{"title"=>"tasky", "description"=>"task"}, "commit"=>"Create Task"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tasks" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "tasky"], ["description", "task"], ["created_at", "2016-09-30 18:01:56.625673"], ["updated_at", "2016-09-30 18:01:56.625673"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2016-09-30 11:01:56 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/show/15" for ::1 at 2016-09-30 11:01:57 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[35mTask Load (0.3ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 15]]
+  Rendered tasks/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/show/15" for ::1 at 2016-09-30 11:02:54 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 15]]
+  Rendered tasks/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 28ms (Views: 18.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/style.self-7eae9af17f0b777879a070edef2b100f5ca8d5007644b2b40a7c66e99c1b7974.css?body=1" for ::1 at 2016-09-30 11:02:54 -0700
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-30 11:02:54 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 11:02:54 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-30 11:02:54 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 11:02:54 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 11:02:54 -0700
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-30 11:02:54 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-30 11:02:54 -0700
+
+
+Started PATCH "/tasks/15/show" for ::1 at 2016-09-30 11:02:55 -0700
+Processing by TasksController#button as HTML
+  Parameters: {"authenticity_token"=>"98Z8c2dPogQbuhNL0uaAITHyHI3yN7jTSu95DWsY4g5ljeGZ/1wr/uANP8+e7DT2PzeEtBFZaAxy54+R44F4Dw==", "id"=>"15"}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 15]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/tasks/show/15
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/show/15" for ::1 at 2016-09-30 11:02:55 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 15]]
+  Rendered tasks/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-09-30 11:02:58 -0700
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 32ms (Views: 31.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-09-30 11:03:11 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/style.self-7eae9af17f0b777879a070edef2b100f5ca8d5007644b2b40a7c66e99c1b7974.css?body=1" for ::1 at 2016-09-30 11:03:11 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 11:03:11 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 11:03:11 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 11:03:11 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-30 11:03:11 -0700
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-30 11:03:11 -0700
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-30 11:03:11 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-30 11:03:11 -0700
+
+
+Started GET "/tasks/show/15" for ::1 at 2016-09-30 11:03:12 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 15]]
+  Rendered tasks/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 28ms (Views: 26.8ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/tasks/15/show" for ::1 at 2016-09-30 11:03:13 -0700
+Processing by TasksController#button as HTML
+  Parameters: {"authenticity_token"=>"lJht8hjpMDUK22I7VifjOo1mPC107A2EmpeDCihUX7cG0/AYgPq5z/FsTr8aLVftg6OkFJeC3Vuin3WWoM3Ftg==", "id"=>"15"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 15]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tasks/show/15
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/show/15" for ::1 at 2016-09-30 11:03:13 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 15]]
+  Rendered tasks/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/tasks/show/15" for ::1 at 2016-09-30 11:03:30 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 15]]
+  Rendered tasks/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 28ms (Views: 18.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/style.self-7eae9af17f0b777879a070edef2b100f5ca8d5007644b2b40a7c66e99c1b7974.css?body=1" for ::1 at 2016-09-30 11:03:30 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-30 11:03:30 -0700
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-30 11:03:30 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 11:03:30 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 11:03:30 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 11:03:30 -0700
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-30 11:03:30 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-30 11:03:30 -0700
+
+
+Started PATCH "/tasks/15/show" for ::1 at 2016-09-30 11:03:31 -0700
+Processing by TasksController#button as HTML
+  Parameters: {"authenticity_token"=>"5T3cQOw5vimtiCxPPbs8/aG+lMhzJ9kSm0oKWAhwsml3dkGqdCo301Y/AMtxsYgqr3sM8ZBJCc2jQvzEgOkoaA==", "id"=>"15"}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 15]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "tasks" SET "completed_at" = ?, "updated_at" = ? WHERE "tasks"."id" = ?  [["completed_at", "2016-09-30 18:03:31.239278"], ["updated_at", "2016-09-30 18:03:31.239930"], ["id", 15]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tasks/show/15
+Completed 302 Found in 6ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/tasks/show/15" for ::1 at 2016-09-30 11:03:31 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 15]]
+  Rendered tasks/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/tasks/15/show" for ::1 at 2016-09-30 11:03:32 -0700
+Processing by TasksController#button as HTML
+  Parameters: {"authenticity_token"=>"h/JRvWyLo95BXFZJNNrDHpuQowA8/BuOT8X2UHBulvEVucxX9JgqJLrres140HfJlVU7Od+Sy1F3zQDM+PcM8A==", "id"=>"15"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 15]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "tasks" SET "completed_at" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["completed_at", nil], ["updated_at", "2016-09-30 18:03:32.766919"], ["id", 15]]
+  [1m[35m (2.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/tasks/show/15
+Completed 302 Found in 5ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/tasks/show/15" for ::1 at 2016-09-30 11:03:32 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 15]]
+  Rendered tasks/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/tasks/15/show" for ::1 at 2016-09-30 11:03:33 -0700
+Processing by TasksController#button as HTML
+  Parameters: {"authenticity_token"=>"HD285tqsC5WEmD5eAf8Ssl91so8QRmmqy0JMk/q9z+COdiEMQr+Cb38vEtpN9aZlUbAqtvMouXXzSroPciRV4Q==", "id"=>"15"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 15]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "tasks" SET "completed_at" = ?, "updated_at" = ? WHERE "tasks"."id" = ?  [["completed_at", "2016-09-30 18:03:33.968414"], ["updated_at", "2016-09-30 18:03:33.968896"], ["id", 15]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tasks/show/15
+Completed 302 Found in 6ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/tasks/show/15" for ::1 at 2016-09-30 11:03:33 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 15]]
+  Rendered tasks/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 24ms (Views: 23.5ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/tasks/15/show" for ::1 at 2016-09-30 11:03:34 -0700
+Processing by TasksController#button as HTML
+  Parameters: {"authenticity_token"=>"1cEZCmhwn1QhLW7CqPGp6CQvDSxRVYo/3+pij5qOKVtHioTg8GMWrtqaQkbk+x0/KuqVFbI7WuDn4pQTEhezWg==", "id"=>"15"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 15]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "tasks" SET "completed_at" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["completed_at", nil], ["updated_at", "2016-09-30 18:03:34.569033"], ["id", 15]]
+  [1m[35m (2.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/tasks/show/15
+Completed 302 Found in 6ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/tasks/show/15" for ::1 at 2016-09-30 11:03:34 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 15]]
+  Rendered tasks/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-09-30 11:03:35 -0700
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 28ms (Views: 26.0ms | ActiveRecord: 0.2ms)
