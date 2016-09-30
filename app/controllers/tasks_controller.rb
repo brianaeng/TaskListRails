@@ -6,9 +6,10 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.find(params[:id])
+    @datetime = @task.completed_at
 
-    if @task[:completion] == true
-      @status = "Done at #{@task[:completed_at]}"
+    if @task.completed_at != nil
+      @status = "Done at #{@datetime.strftime('%H:%M %P')} on #{@datetime.strftime('%B %e, %Y')}"
     else
       @status = "Still in progress"
     end
@@ -34,14 +35,30 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
   end
 
+  def button
+    @task = Task.find(params[:id])
+
+    @task.completed_at = Time.now
+
+    @task.save
+
+    redirect_to show_path
+  end
+
   def update
     @task = Task.find(params[:id])
 
-    @task.title = params[:post][:title]
-    @task.description = params[:post][:description]
-    @task.completed_at = params[:post][:completed_at]
+    @task.update(title: params[:task][:title], description: params[:task][:description], completed_at: params[:task][:completed_at])
 
-    @task.save
+    # @task = Task.find(params[:id])
+    #
+    # @task.title = params[:task][:title]
+    # @task.description = params[:task][:description]
+    # @task.completed_at = params[:task][:completed_at]
+    #
+    # @task.save
+
+    redirect_to root_path
   end
 
   def destroy

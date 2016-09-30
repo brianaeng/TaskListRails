@@ -62,3 +62,7 @@ footer {
   font-size: .7em;
   padding: 1em;
 }
+
+.done {
+  text-decoration: line-through;
+}

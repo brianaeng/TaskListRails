@@ -3,7 +3,11 @@
   <ol>
   <% @tasks.each do |task| %>
     <li>
-      <%= link_to(task.title, show_path(task[:id])) %>
+      <% if task.completed_at != nil %>
+        <%= link_to(task.title, show_path(task[:id])) %>
+      <% else %>
+        <div class='done'><%= link_to(task.title, show_path(task[:id])) %></div>
+      <% end %>
     </li>
   <% end %>
   </ol>

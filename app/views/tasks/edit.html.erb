@@ -1,17 +1,15 @@
 <h1>Edit Your Task</h1>
 <article>
-  <form name="edit" action="update" method="put"> <!--change this to post -->
-    <label for="title">Title</label>
-    <input type="text" name="title" id="title" value="<%= @task[:title] %>"/>
+  <%= form_for @task, url: update_path do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title%>
 
-    <label for="description">Description</label>
-    <textarea name="description" id="description"><%= @task[:description] %></textarea>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
 
-    <%# if @task[:completion] == false %>
-      <label for="completed_at">Completed At:</label>
-      <input type="text" name="completed_at" id="completed_at" />
-    <%# end %>
+    <%= f.label :completed_at %>
+    <%= f.datetime_local_field :completed_at %>
 
-    <input type="submit" name="Update Task"/>
-  </form>
+    <%= f.submit %>
+  <% end %>
 </article>
