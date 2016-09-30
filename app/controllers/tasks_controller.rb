@@ -9,7 +9,7 @@ class TasksController < ApplicationController
     @datetime = @task.completed_at
 
     if @task.completed_at != nil
-      @status = "Done at #{@datetime.strftime('%H:%M %P')} on #{@datetime.strftime('%B %e, %Y')}"
+      @status = "Done at #{@datetime.strftime('%I:%M %P')} on #{@datetime.strftime('%B %e, %Y')}"
     else
       @status = "Still in progress"
     end
