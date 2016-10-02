@@ -16,6 +16,10 @@ h5 {
   margin: 1.1em;
 }
 
+/*li * {
+  display: inline-block;
+}*/ /* this was for the button on the front page */
+
 div {
   margin: 0 auto;
 
@@ -63,6 +67,6 @@ footer {
   padding: 1em;
 }
 
-.done span {
+.done {
   text-decoration: line-through;
 }
