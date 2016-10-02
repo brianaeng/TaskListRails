@@ -38,11 +38,7 @@ class TasksController < ApplicationController
   def button
     @task = Task.find(params[:id])
 
-    if @task.completed_at == nil
-      @task.completed_at = Time.now
-    else
-      @task.completed_at = nil
-    end
+    @task.completed_at == nil ? @task.completed_at = Time.now : @task.completed_at = nil
 
     @task.save
 
@@ -53,14 +49,6 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
 
     @task.update(title: params[:task][:title], description: params[:task][:description], completed_at: params[:task][:completed_at])
-
-    # @task = Task.find(params[:id])
-    #
-    # @task.title = params[:task][:title]
-    # @task.description = params[:task][:description]
-    # @task.completed_at = params[:task][:completed_at]
-    #
-    # @task.save
 
     redirect_to root_path
   end
