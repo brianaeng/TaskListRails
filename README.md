@@ -1,3 +1,13 @@
+#Reflection
+**What went well?**
+The views and controller went nicely, they felt pretty solid. The embedded Ruby was also fun! I feel like this helped stitch together my knowledge of Ruby + HTML/CSS which was super satisfying. Overall this felt very good as a first solo Rails project, hoping everything will just stick a little more and more over time (aka not looking back at live-codes for reference as much).
+
+**What are you still working on understanding better?**
+The routes for sure still confuse me, I felt like I just threw everything at them and hoped something sticked. I also would like to get a better workflow down, I think I get a bit overwhelmed with all the interworking parts of a Rails project and that leads to some things being dropped (aka naming a method 'button' & forgetting to rename it LOL).
+
+**What did your chair pair do differently?**
+We did pretty much the same thing, our approaches to design were just a bit different. I liked how she used a checkbox for completion on the show view. Her CSS was awesome - it was nice to see something a bit more embellished since I tend to go the simple route for design.
+
 # Task List Rails ✅
 We are going to build a Task List in Rails. This web application will enable us to keep track of list of tasks with the functionality to add, edit and remove tasks from a list.
 
@@ -50,7 +60,7 @@ In this wave we will add the first set of user interactivity and persistence.
     1. Ask the user to confirm that they definitely want to delete the task.
     1. Delete the task from the database and redirect the user back to the list of remaining tasks
 
-<!-- ## 🌊 Wave 3
+## 🌊 Wave 3
 In this wave we will extend the interactivity with users, allowing them to edit existing tasks in a couple of different ways. As always, follow _RESTful_ conventions when implementing these features.
 
 - Add the ability for the user to mark a task complete
@@ -63,5 +73,3 @@ In this wave we will extend the interactivity with users, allowing them to edit 
   - Link to the `edit` action from the task's `show` page.
   - DRY up your code by reusing the view code from the `new` functionality
     - Hint: Rendering _partials_ in Rails.
-
- -->
