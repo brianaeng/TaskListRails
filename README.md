@@ -1,11 +1,11 @@
 #Reflection
-**What went well?**
+**What went well?**  
 The views and controller went nicely, they felt pretty solid. The embedded Ruby was also fun! I feel like this helped stitch together my knowledge of Ruby + HTML/CSS which was super satisfying. Overall this felt very good as a first solo Rails project, hoping everything will just stick a little more and more over time (aka not looking back at live-codes for reference as much).
 
-**What are you still working on understanding better?**
+**What are you still working on understanding better?**  
 The routes for sure still confuse me, I felt like I just threw everything at them and hoped something sticked. I also would like to get a better workflow down, I think I get a bit overwhelmed with all the interworking parts of a Rails project and that leads to some things being dropped (aka naming a method 'button' & forgetting to rename it LOL).
 
-**What did your chair pair do differently?**
+**What did your chair pair do differently?**  
 We did pretty much the same thing, our approaches to design were just a bit different. I liked how she used a checkbox for completion on the show view. Her CSS was awesome - it was nice to see something a bit more embellished since I tend to go the simple route for design.
 
 # Task List Rails ✅
