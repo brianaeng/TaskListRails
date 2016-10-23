@@ -10,8 +10,9 @@ class UserTest < ActiveSupport::TestCase
     assert users(:ada).valid?
   end
 
-  test 'a user must have an email' do
+  test 'a user must have a valid email' do
     assert users(:no_email).invalid?
+    assert users(:incorrect_email).invalid?
     assert users(:babbage).valid?
   end
 

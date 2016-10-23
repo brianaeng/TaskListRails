@@ -36,8 +36,17 @@ no_email:
   avatar: "test.jpg"
   created_at: 2016-09-26 12:57:50
 
-no_avatar:
+incorrect_email:
   id: 5
+  uid: 435
+  name: "Test"
+  provider: "github"
+  email: "dsgfdgdfg"
+  avatar: "test.jpg"
+  created_at: 2016-09-26 12:57:50
+
+no_avatar:
+  id: 6
   uid: 768
   name: "Test"
   provider: "github"
@@ -46,7 +55,7 @@ no_avatar:
   created_at: 2016-09-26 12:57:50
 
 no_uid:
-  id: 6
+  id: 7
   uid:
   name: "Test"
   provider: "github"

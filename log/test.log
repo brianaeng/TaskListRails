@@ -431,3 +431,326 @@ UserTest: test_a_user_must_have_a_name
   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "tasks"[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (1, '123', 'Ada', 'github', 'ada@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:54:32')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (2, '456', 'Babbage', 'github', 'babbage@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:54:32')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (3, '345', NULL, 'github', 'test@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:54:32')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (4, '435', 'Test', 'github', NULL, 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:54:32')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (5, '768', 'Test', 'github', 'test1@me.com', NULL, '2016-09-26 12:57:50.000000', '2016-10-23 03:54:32')[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (6, NULL, 'Test', 'github', 'test2@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:54:32')
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+----------------------------------------
+UserTest: test_a_user_must_have_an_email
+----------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------
+UserTest: test_a_user_must_have_a_uid
+-------------------------------------
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------
+UserTest: test_a_user_must_have_a_name
+--------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------
+UserTest: test_a_user_must_have_an_avatar
+-----------------------------------------
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "tasks"[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (1, '123', 'Ada', 'github', 'ada@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:54:47')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (2, '456', 'Babbage', 'github', 'babbage@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:54:47')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (3, '345', NULL, 'github', 'test@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:54:47')[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (4, '435', 'Test', 'github', NULL, 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:54:47')
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (5, '768', 'Test', 'github', 'test1@me.com', NULL, '2016-09-26 12:57:50.000000', '2016-10-23 03:54:47')[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (6, NULL, 'Test', 'github', 'test2@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:54:47')
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------
+UserTest: test_a_user_must_have_a_uid
+-------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------
+UserTest: test_a_user_must_have_an_avatar
+-----------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------
+UserTest: test_a_user_must_have_a_name
+--------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+----------------------------------------
+UserTest: test_a_user_must_have_an_email
+----------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "tasks"[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (1, '123', 'Ada', 'github', 'ada@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:55:47')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (2, '456', 'Babbage', 'github', 'babbage@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:55:47')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (3, '345', NULL, 'github', 'test@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:55:47')[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (4, '435', 'Test', 'github', NULL, 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:55:47')
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (5, '768', 'Test', 'github', 'test1@me.com', NULL, '2016-09-26 12:57:50.000000', '2016-10-23 03:55:47')[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (6, NULL, 'Test', 'github', 'test2@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:55:47')
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------
+UserTest: test_a_user_must_have_a_name
+--------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------
+UserTest: test_a_user_must_have_an_avatar
+-----------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------
+UserTest: test_a_user_must_have_an_email
+----------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-------------------------------------
+UserTest: test_a_user_must_have_a_uid
+-------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "tasks"[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (1, '123', 'Ada', 'github', 'ada@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:56:44')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (2, '456', 'Babbage', 'github', 'babbage@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:56:44')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (3, '345', NULL, 'github', 'test@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:56:44')[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (4, '435', 'Test', 'github', NULL, 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:56:44')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (4, '435', 'Test', 'github', 'dsgfdgdfg', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:56:44')[0m
+  [1m[35m (2.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "tasks"
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (1, '123', 'Ada', 'github', 'ada@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:56:44')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (2, '456', 'Babbage', 'github', 'babbage@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:56:44')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (3, '345', NULL, 'github', 'test@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:56:44')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (4, '435', 'Test', 'github', NULL, 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:56:44')[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (4, '435', 'Test', 'github', 'dsgfdgdfg', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:56:44')
+  [1m[36m (2.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "tasks"[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (1, '123', 'Ada', 'github', 'ada@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:56:44')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (2, '456', 'Babbage', 'github', 'babbage@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:56:44')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (3, '345', NULL, 'github', 'test@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:56:44')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (4, '435', 'Test', 'github', NULL, 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:56:44')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (4, '435', 'Test', 'github', 'dsgfdgdfg', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:56:44')[0m
+  [1m[35m (2.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "tasks"
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (1, '123', 'Ada', 'github', 'ada@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:56:44')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (2, '456', 'Babbage', 'github', 'babbage@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:56:44')[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (3, '345', NULL, 'github', 'test@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:56:44')
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (4, '435', 'Test', 'github', NULL, 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:56:44')[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (4, '435', 'Test', 'github', 'dsgfdgdfg', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:56:44')
+  [1m[36m (2.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "tasks"[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (1, '123', 'Ada', 'github', 'ada@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:56:59')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (2, '456', 'Babbage', 'github', 'babbage@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:56:59')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (3, '345', NULL, 'github', 'test@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:56:59')[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (4, '435', 'Test', 'github', NULL, 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:56:59')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (5, '435', 'Test', 'github', 'dsgfdgdfg', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:56:59')[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (6, '768', 'Test', 'github', 'test1@me.com', NULL, '2016-09-26 12:57:50.000000', '2016-10-23 03:56:59')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (7, NULL, 'Test', 'github', 'test2@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:56:59')[0m
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------
+UserTest: test_a_user_must_have_a_valid_email
+---------------------------------------------
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------
+UserTest: test_a_user_must_have_a_name
+--------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------
+UserTest: test_a_user_must_have_a_uid
+-------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+-----------------------------------------
+UserTest: test_a_user_must_have_an_avatar
+-----------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "tasks"[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (1, '123', 'Ada', 'github', 'ada@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:58:20')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (2, '456', 'Babbage', 'github', 'babbage@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:58:20')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (3, '345', NULL, 'github', 'test@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:58:20')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (4, '435', 'Test', 'github', NULL, 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:58:20')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (5, '435', 'Test', 'github', 'dsgfdgdfg', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:58:20')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (6, '768', 'Test', 'github', 'test1@me.com', NULL, '2016-09-26 12:57:50.000000', '2016-10-23 03:58:20')
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (7, NULL, 'Test', 'github', 'test2@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:58:20')[0m
+  [1m[35m (5.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------
+UserTest: test_a_user_must_have_a_valid_email
+---------------------------------------------
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------
+UserTest: test_a_user_must_have_an_avatar
+-----------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------
+UserTest: test_a_user_must_have_a_uid
+-------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "tasks"[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (1, '123', 'Ada', 'github', 'ada@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:58:53')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (2, '456', 'Babbage', 'github', 'babbage@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:58:53')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (3, '345', NULL, 'github', 'test@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:58:53')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (4, '435', 'Test', 'github', NULL, 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:58:53')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (5, '435', 'Test', 'github', 'dsgfdgdfg', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:58:53')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (6, '768', 'Test', 'github', 'test1@me.com', NULL, '2016-09-26 12:57:50.000000', '2016-10-23 03:58:53')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (7, NULL, 'Test', 'github', 'test2@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:58:53')[0m
+  [1m[35m (2.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------
+UserTest: test_a_user_must_have_a_valid_email
+---------------------------------------------
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------
+UserTest: test_a_user_must_have_an_avatar
+-----------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------
+UserTest: test_a_user_must_have_a_name
+--------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "tasks"[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (1, '123', 'Ada', 'github', 'ada@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:59:05')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (2, '456', 'Babbage', 'github', 'babbage@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:59:05')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (3, '345', NULL, 'github', 'test@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:59:05')[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (4, '435', 'Test', 'github', NULL, 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:59:05')
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (5, '435', 'Test', 'github', 'dsgfdgdfg', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:59:05')[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (6, '768', 'Test', 'github', 'test1@me.com', NULL, '2016-09-26 12:57:50.000000', '2016-10-23 03:59:05')
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (7, NULL, 'Test', 'github', 'test2@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 03:59:05')[0m
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------
+UserTest: test_a_user_must_have_a_uid
+-------------------------------------
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------
+UserTest: test_a_user_must_have_an_avatar
+-----------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------
+UserTest: test_a_user_must_have_a_name
+--------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------
+UserTest: test_a_user_must_have_a_valid_email
+---------------------------------------------
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM "tasks"[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (1, '123', 'Ada', 'github', 'ada@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 04:01:00')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (2, '456', 'Babbage', 'github', 'babbage@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 04:01:00')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (3, '345', NULL, 'github', 'test@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 04:01:00')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (4, '435', 'Test', 'github', NULL, 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 04:01:00')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (5, '435', 'Test', 'github', 'dsgfdgdfg', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 04:01:00')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (6, '768', 'Test', 'github', 'test1@me.com', NULL, '2016-09-26 12:57:50.000000', '2016-10-23 04:01:00')
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (7, NULL, 'Test', 'github', 'test2@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 04:01:00')[0m
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------
+UserTest: test_a_user_must_have_a_valid_email
+---------------------------------------------
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------
+UserTest: test_a_user_must_have_a_name
+--------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------
+UserTest: test_a_user_must_have_a_uid
+-------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------
+UserTest: test_a_user_must_have_an_avatar
+-----------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m

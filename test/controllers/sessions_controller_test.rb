@@ -15,5 +15,4 @@ class SessionsControllerTest < ActionController::TestCase
     end
   end
 
-
 end
