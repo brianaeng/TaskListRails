@@ -6,6 +6,7 @@ ada:
   name: "Ada"
   provider: "github"
   email: "ada@me.com"
+  avatar: "test.jpg"
   created_at: 2016-09-26 12:57:50
 
 babbage:
@@ -14,4 +15,41 @@ babbage:
   name: "Babbage"
   provider: "github"
   email: "babbage@me.com"
+  avatar: "test.jpg"
+  created_at: 2016-09-26 12:57:50
+
+no_name:
+  id: 3
+  uid: 345
+  name:
+  provider: "github"
+  email: "test@me.com"
+  avatar: "test.jpg"
+  created_at: 2016-09-26 12:57:50
+
+no_email:
+  id: 4
+  uid: 435
+  name: "Test"
+  provider: "github"
+  email:
+  avatar: "test.jpg"
+  created_at: 2016-09-26 12:57:50
+
+no_avatar:
+  id: 5
+  uid: 768
+  name: "Test"
+  provider: "github"
+  email: "test1@me.com"
+  avatar:
+  created_at: 2016-09-26 12:57:50
+
+no_uid:
+  id: 6
+  uid:
+  name: "Test"
+  provider: "github"
+  email: "test2@me.com"
+  avatar: "test.jpg"
   created_at: 2016-09-26 12:57:50

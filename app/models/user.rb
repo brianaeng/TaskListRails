@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  validates_presence_of :name, :email, :uid, :avatar
+
   def self.build_from_github(auth_hash)
     user       = User.new
     user.uid   = auth_hash[:uid]

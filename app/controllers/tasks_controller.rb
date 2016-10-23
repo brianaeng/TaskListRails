@@ -7,7 +7,6 @@ class TasksController < ApplicationController
   end
 
   def show
-    # @task = Task.find(params[:id])
     @datetime = @task.completed_at
 
     if @task.completed_at != nil
@@ -25,10 +24,6 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
 
-    # @task.title = params[:task][:title]
-    # @task.description = params[:task][:description]
-    # @task.completed_at = params[:task][:completed_at]
-
     if @task.save
       redirect_to root_path
     else
@@ -37,33 +32,22 @@ class TasksController < ApplicationController
   end
 
   def edit
-    # @task = Task.find(params[:id])
     @path = "update"
   end
 
-  def complete_toggle #rename to complete_toggle
-    # @task = Task.find(params[:id])
-
-    # @task.completed_at == nil ? @task.completed_at = Time.now : @task.completed_at = nil
-    #
-    # @task.save
+  def complete_toggle
     @task.completed?
 
     redirect_to show_path
   end
 
   def update
-    # @task = Task.find(params[:id])
-
-    # @task.update(title: params[:task][:title], description: params[:task][:description], completed_at: params[:task][:completed_at])
     @task.update(task_params)
 
     redirect_to root_path
   end
 
   def destroy
-    # @task = Task.find(params[:id])
-
     @task.destroy
 
     redirect_to root_path
