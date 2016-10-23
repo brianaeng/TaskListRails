@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_action :require_user
   before_action :find_task, only: [:show, :edit, :update, :destroy, :complete_toggle]
 
   def index
@@ -28,9 +29,11 @@ class TasksController < ApplicationController
     # @task.description = params[:task][:description]
     # @task.completed_at = params[:task][:completed_at]
 
-    @task.save
-
-    redirect_to root_path
+    if @task.save
+      redirect_to root_path
+    else
+      redirect_to "/tasks/new"
+    end
   end
 
   def edit

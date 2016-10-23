@@ -1,8 +1,4 @@
 <article>
-  <h1>Welcome to Task List</h1>
-  <% if session[:user_id] == nil %>
-    <p class="center">Please log in via Github.</p>
-  <% else %>
   <h1>Your Tasks</h1>
     <ol>
     <% @tasks.each do |task| %>
@@ -18,5 +14,4 @@
       </li>
     <% end %>
     </ol>
-  <% end %>
 </article>
