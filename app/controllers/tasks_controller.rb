@@ -18,7 +18,7 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
-    @path = "create"
+    @path = create_path
   end
 
   def create
@@ -32,7 +32,8 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @path = "update"
+    find_task
+    @path = update_path
   end
 
   def complete_toggle
@@ -42,6 +43,7 @@ class TasksController < ApplicationController
   end
 
   def update
+    find_task
     @task.update(task_params)
 
     redirect_to root_path
