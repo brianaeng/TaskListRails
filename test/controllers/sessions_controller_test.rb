@@ -3,7 +3,7 @@ require 'test_helper'
 class SessionsControllerTest < ActionController::TestCase
   def login_a_user
     request.env['omniauth.auth'] = OmniAuth.config.mock_auth[:github]
-    get :create, {provider: 'github'}
+    get :create, {provider: "github"}
   end
 
   test "can create a user" do

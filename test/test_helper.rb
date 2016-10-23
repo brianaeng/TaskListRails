@@ -10,6 +10,6 @@ class ActiveSupport::TestCase
   def setup
     OmniAuth.config.test_mode = true
 
-    OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({provider: 'github', uid: '123545', info: {email: "a@b.com", name: "Ada"}})
+    OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({provider: 'github', uid: '123545', info: {email: "a@b.com", name: "Ada"}, extra: {raw_info: {avatar_url: "image.jpg"}}})
   end
 end
