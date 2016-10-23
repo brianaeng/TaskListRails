@@ -1,0 +1,29 @@
+<article class="sign-in">
+  <section class="center login-signup">
+
+    <h1>Sign In</h1>
+    <% if flash[:notice] != nil %>
+      <div class="alert center">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <%= form_for :session, url: login_path do |f| %>
+      <%= f.email_field :email, :placeholder => "Email" %>
+      <%= f.password_field :password, :placeholder => "Password" %>
+      <%= f.submit "Log in", class: "btn-submit" %>
+    <% end %>
+  </section>
+
+  <section class="center login-signup">
+    <p>Not signed up for Task List yet?</p>
+    <p>Sign up below or sign in via Github above.</p>
+
+    <%= form_for @user, url: users_path do |f| %>
+      <%= f.text_field :name, :placeholder => "Name" %>
+      <%= f.email_field :email, :placeholder => "Email" %>
+      <%= f.password_field :password, :placeholder => "Password" %>
+      <%= f.submit "Create an account" %>
+    <% end %>
+  </section>
+</article>

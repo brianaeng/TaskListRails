@@ -18,10 +18,11 @@
 
       <div class="user-nav">
         <% if session[:user_id] == nil %>
+          <%= link_to "Log in via Task List", "/login" %>
           <%= link_to "Log in via Github", "/auth/github"  %>
         <% else %>
           <%= link_to "Profile", user_path(session[:user_id]), method: :get %>
-          <%= link_to "Log out", "/session/destroy", method: :delete %>
+          <%= link_to "Log out", "/logout", method: :delete %>
         <% end %>
       </div>
     </nav>

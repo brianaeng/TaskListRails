@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
+  has_secure_password
+
   has_many :tasks
 
-  validates_presence_of :name, :email, :uid, :avatar
+  validates_presence_of :name, :email
   validate :valid_email
 
   def self.build_from_github(auth_hash)

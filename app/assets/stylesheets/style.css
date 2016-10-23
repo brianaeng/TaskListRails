@@ -90,3 +90,7 @@ img {
 .alert {
   color: rgb(179, 0, 0);
 }
+
+.login-signup {
+  margin: 4rem auto;
+}

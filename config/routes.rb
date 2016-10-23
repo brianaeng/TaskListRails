@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
   root to: 'pages#index'
 
+  get 'signup'  => 'users#new'
+
+  get 'login' => 'sessions#new'
+
+  post 'login' => 'sessions#create_via_login'
+
+  delete 'logout' => 'sessions#destroy'
+
   get 'pages/index'
 
   get 'sessions/create'
@@ -21,9 +29,9 @@ Rails.application.routes.draw do
 
   delete 'tasks/:id/destroy' => 'tasks#destroy', as: 'destroy'
 
-  get '/auth/:provider/callback' =>  'sessions#create'
+  get '/auth/:provider/callback' =>  'sessions#create_via_github'
 
-  delete '/session/destroy' => 'sessions#destroy'
+  # delete '/session/destroy' => 'sessions#destroy'
 
   resources :users
 

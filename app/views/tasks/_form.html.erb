@@ -1,6 +1,10 @@
 <% if flash[:notice] != nil %>
   <div class="alert center">
-    <%= flash[:notice].join("<br>").html_safe %>
+    <% if flash[:notice].length > 1 %>
+      <%= flash[:notice].join("<br>").html_safe %>
+    <% else %>
+      <%= flash[:notice] %>
+    <% end %>
   </div>
 <% end %>
 

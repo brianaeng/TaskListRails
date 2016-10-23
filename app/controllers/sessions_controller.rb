@@ -1,5 +1,9 @@
 class SessionsController < ApplicationController
-  def create
+  def new
+    @user = User.new
+  end
+
+  def create_via_github
     auth_hash = request.env['omniauth.auth']
 
     flash[:notice] = "Login failed!"
@@ -15,6 +19,18 @@ class SessionsController < ApplicationController
     session[:user_id] = @user.id
     flash[:notice] = "Successfully logged in!"
     redirect_to root_path
+  end
+
+  def create_via_login
+    @user = User.find_by_email(params[:session][:email])
+    if @user && @user.authenticate(params[:session][:password])
+      session[:user_id] = @user.id
+      flash[:notice] = "Successfully logged in!"
+      redirect_to root_path
+    else
+      flash[:notice] = "Login failed!"
+      redirect_to '/login', method: :get
+    end
   end
 
   def destroy
