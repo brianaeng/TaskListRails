@@ -1,0 +1,15 @@
+<%# form_for @task, url: @path do |f| %>
+<%= form_for @task, url: action_name do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title%>
+
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+
+  <!-- <% if  %>
+    <%= f.label :completed_at %>
+    <%= f.datetime_local_field :completed_at %>
+  <% end %> FIX THIS -->
+
+  <%= f.submit %>
+<% end %>

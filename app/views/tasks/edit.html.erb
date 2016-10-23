@@ -1,5 +1,7 @@
 <h1>Edit Your Task</h1>
-<article>
+
+<%= render partial: 'form', locals: { action_name: "update" } %>
+<!-- <article>
   <%= form_for @task, url: update_path do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title%>
@@ -12,4 +14,4 @@
 
     <%= f.submit %>
   <% end %>
-</article>
+</article> -->

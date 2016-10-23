@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-
   root to: 'tasks#index'
+
+  get 'sessions/create'
 
   get 'tasks/index', as: 'index'
 
@@ -14,9 +15,16 @@ Rails.application.routes.draw do
 
   patch 'tasks/:id/update' => 'tasks#update', as: 'update'
 
-  patch 'tasks/:id/button' => 'tasks#button', as: 'button'
+  patch 'tasks/:id/' => 'tasks#complete_toggle', as: 'complete_toggle' #changed this so might need to update
 
   delete 'tasks/:id/destroy' => 'tasks#destroy', as: 'destroy'
+
+  get '/auth/:provider/callback' =>  'sessions#create'
+
+  delete '/session/destroy' => 'sessions#destroy'
+
+  resources :users
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

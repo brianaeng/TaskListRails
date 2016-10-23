@@ -9,8 +9,19 @@
 <body>
   <header>
     <nav>
-      <%= link_to_unless_current("Home", root_path) %>
-      <%= link_to_unless_current("Add New Task", new_path) %>
+      <div class="site-nav">
+        <%= link_to_unless_current("Home", root_path) %>
+        <%= link_to_unless_current("Add New Task", new_path) %>
+      </div>
+
+      <div class="user-nav">
+        <% if session[:user_id] == nil %>
+          <%= link_to "Log in via Github", "/auth/github"  %>
+        <% else %>
+          <%= link_to "Profile", user_path(session[:user_id]), method: :get %>
+          <%= link_to "Log out", "/session/destroy", method: :delete %>
+        <% end %>
+      </div>
     </nav>
   </header>
 

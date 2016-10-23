@@ -1,6 +1,13 @@
 source 'https://rubygems.org'
 
-
+# Make text print prettily
+gem 'awesome_print', require: 'ap'
+#Omniauth for authorization
+gem "omniauth"
+gem "omniauth-github"
+# Make tables print prettily
+gem 'hirb'
+gem 'hirb-unicode'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7'
 # Use sqlite3 as the database for Active Record
@@ -35,6 +42,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -43,5 +51,5 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'better_errors'
 end
-
