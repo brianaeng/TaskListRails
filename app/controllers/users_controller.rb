@@ -12,6 +12,8 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.avatar = "default_icon.jpg"
+
     if @user.save
       session[:user_id] = @user.id
       redirect_to index_path
