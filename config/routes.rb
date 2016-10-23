@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
+  root to: 'tasks#index'
 
   get 'sessions/create'
-
-  root to: 'tasks#index'
 
   get 'tasks/index', as: 'index'
 
@@ -20,7 +19,11 @@ Rails.application.routes.draw do
 
   delete 'tasks/:id/destroy' => 'tasks#destroy', as: 'destroy'
 
-  get "/auth/:provider/callback" =>  "sessions#create"
+  get '/auth/:provider/callback' =>  'sessions#create'
+
+  delete '/session/destroy' => 'sessions#destroy'
+
+  resources :users
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
 
     session[:user_id] = @user.id
     flash[:notice] = "Successfully logged in!"
-    redirect_to :back
+    redirect_to root_path
   end
 
   def destroy

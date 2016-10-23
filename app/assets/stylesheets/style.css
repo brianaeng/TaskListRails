@@ -47,7 +47,18 @@ nav {
   padding: 10px 10px;
   font-size: 1.1em;
   text-align: center;
-  border-bottom: black 1px solid;
+}
+
+nav a {
+  padding: 10px 20px;
+}
+
+.site-nav {
+  float: left;
+}
+
+.user-nav {
+  float: right;
 }
 
 input[type="text"], textarea, label {
@@ -69,4 +80,13 @@ footer {
 
 .done {
   text-decoration: line-through;
+}
+
+img {
+  width: 10rem;
+}
+
+.profile {
+  margin: 0 auto;
+  text-align: center;
 }
