@@ -10,7 +10,6 @@ class SessionsControllerTest < ActionController::TestCase
     assert_difference('User.count', 1) do
       login_a_user
       assert_response :redirect
-      assert_redirect_to root_path
       assert_equal session[:user_id], User.find_by(uid: OmniAuth.config.mock_auth[:github][:uid], provider: 'github').id
     end
   end

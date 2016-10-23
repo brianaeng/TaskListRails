@@ -1,4 +1,10 @@
 <article>
+  <% if flash[:notice] != nil %>
+    <div class="alert center">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+
   <h1>Your Tasks</h1>
     <ol>
     <% @tasks.each do |task| %>

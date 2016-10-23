@@ -16,10 +16,6 @@ h5 {
   margin: 1.1em;
 }
 
-/*li * {
-  display: inline-block;
-}*/ /* this was for the button on the front page */
-
 div {
   margin: 0 auto;
 
@@ -89,4 +85,8 @@ img {
 .center {
   margin: 0 auto;
   text-align: center;
+}
+
+.alert {
+  color: rgb(179, 0, 0);
 }

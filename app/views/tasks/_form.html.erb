@@ -1,4 +1,9 @@
-<%# form_for @task, url: @path do |f| %>
+<% if flash[:notice] != nil %>
+  <div class="alert center">
+    <%= flash[:notice].join("<br>").html_safe %>
+  </div>
+<% end %>
+
 <%= form_for @task, url: action_name do |f| %>
   <%= f.hidden_field :user_id, value: session[:user_id] %>
 

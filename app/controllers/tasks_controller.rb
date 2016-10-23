@@ -25,8 +25,10 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
 
     if @task.save
+      flash[:notice] = "Task successfully created"
       redirect_to root_path
     else
+      flash[:notice] = @task.errors.full_messages
       redirect_to "/tasks/new"
     end
   end

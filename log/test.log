@@ -754,3 +754,1100 @@ UserTest: test_a_user_must_have_an_avatar
 -----------------------------------------
   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "completed_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "note" text, "user_id" integer) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (2.4ms)[0m  [1mCREATE  INDEX "index_tasks_on_user_id" ON "tasks" ("user_id")[0m
+  [1m[35m (3.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "uid" varchar, "name" varchar, "provider" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "avatar" varchar, "authenticated" boolean) 
+  [1m[36m (2.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (3.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20161023050759')
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160928232311')[0m
+  [1m[35m (1.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20161004145644')
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20161018170119')[0m
+  [1m[35m (1.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20161022191446')
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM "tasks"
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "users"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (1, '123', 'Ada', 'github', 'ada@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 19:47:05')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (2, '456', 'Babbage', 'github', 'babbage@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 19:47:05')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (3, '345', NULL, 'github', 'test@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 19:47:05')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (4, '435', 'Test', 'github', NULL, 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 19:47:05')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (5, '435', 'Test', 'github', 'dsgfdgdfg', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 19:47:05')
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (6, '768', 'Test', 'github', 'test1@me.com', NULL, '2016-09-26 12:57:50.000000', '2016-10-23 19:47:05')[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (7, NULL, 'Test', 'github', 'test2@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 19:47:05')
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------
+UserTest: test_a_user_must_have_a_name
+--------------------------------------
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+-------------------------------------
+UserTest: test_a_user_must_have_a_uid
+-------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------
+UserTest: test_a_user_must_have_a_valid_email
+---------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------
+UserTest: test_a_user_must_have_an_avatar
+-----------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "tasks"[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (1, '123', 'Ada', 'github', 'ada@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:21:47')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (2, '456', 'Babbage', 'github', 'babbage@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:21:47')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (3, '345', NULL, 'github', 'test@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:21:47')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (4, '435', 'Test', 'github', NULL, 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:21:47')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (5, '435', 'Test', 'github', 'dsgfdgdfg', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:21:47')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (6, '768', 'Test', 'github', 'test1@me.com', NULL, '2016-09-26 12:57:50.000000', '2016-10-23 20:21:47')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (7, NULL, 'Test', 'github', 'test2@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:21:47')[0m
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+------------------------------------------
+PagesControllerTest: test_should_get_index
+------------------------------------------
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 310ms (Views: 309.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------------
+UsersControllerTest: test_should_get_destroy
+--------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------
+UsersControllerTest: test_should_get_index
+------------------------------------------
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------
+UsersControllerTest: test_should_get_show
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+UsersControllerTest: test_should_get_update
+-------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------
+UsersControllerTest: test_should_get_edit
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+UsersControllerTest: test_should_get_create
+-------------------------------------------
+Processing by UsersController#create as HTML
+  Rendered users/create.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 5ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+----------------------------------------
+UsersControllerTest: test_should_get_new
+----------------------------------------
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-------------------------------------
+UserTest: test_a_user_must_have_a_uid
+-------------------------------------
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+---------------------------------------------
+UserTest: test_a_user_must_have_a_valid_email
+---------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------
+UserTest: test_a_user_must_have_a_name
+--------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------
+UserTest: test_a_user_must_have_an_avatar
+-----------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+----------------------------------------
+TasksControllerTest: test_should_get_new
+----------------------------------------
+Processing by TasksController#new as HTML
+Redirected to http://test.host/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------
+TasksControllerTest: test_should_get_edit
+-----------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------------
+TasksControllerTest: test_should_get_destroy
+--------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------
+TasksControllerTest: test_should_get_index
+------------------------------------------
+Processing by TasksController#index as HTML
+Redirected to http://test.host/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------------------------------
+TasksControllerTest: test_make_sure_a_user_can_see_their_tasks
+--------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------------------------------------
+TasksControllerTest: test_make_sure_a_user_can't_see_another_person's_tasks
+---------------------------------------------------------------------------
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------------
+TasksControllerTest: test_should_get_create
+-------------------------------------------
+Processing by TasksController#create as HTML
+Redirected to http://test.host/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+-----------------------------------------
+TasksControllerTest: test_should_get_show
+-----------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------------
+TasksControllerTest: test_should_get_update
+-------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+----------------------------------------------
+SessionsControllerTest: test_can_create_a_user
+----------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"github"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? AND "users"."provider" = ? LIMIT 1  [["uid", "123545"], ["provider", "github"]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "tasks"[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (1, '123', 'Ada', 'github', 'ada@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:22:09')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (2, '456', 'Babbage', 'github', 'babbage@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:22:09')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (3, '345', NULL, 'github', 'test@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:22:09')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (4, '435', 'Test', 'github', NULL, 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:22:09')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (5, '435', 'Test', 'github', 'dsgfdgdfg', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:22:09')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (6, '768', 'Test', 'github', 'test1@me.com', NULL, '2016-09-26 12:57:50.000000', '2016-10-23 20:22:09')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (7, NULL, 'Test', 'github', 'test2@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:22:09')[0m
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------
+PagesControllerTest: test_should_get_index
+------------------------------------------
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 235ms (Views: 234.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------
+UsersControllerTest: test_should_get_new
+----------------------------------------
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------
+UsersControllerTest: test_should_get_index
+------------------------------------------
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+UsersControllerTest: test_should_get_create
+-------------------------------------------
+Processing by UsersController#create as HTML
+  Rendered users/create.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------
+UsersControllerTest: test_should_get_show
+-----------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+UsersControllerTest: test_should_get_update
+-------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------------
+UsersControllerTest: test_should_get_destroy
+--------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------
+UsersControllerTest: test_should_get_edit
+-----------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------------
+SessionsControllerTest: test_can_create_a_user
+----------------------------------------------
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"github"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? AND "users"."provider" = ? LIMIT 1[0m  [["uid", "123545"], ["provider", "github"]]
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------------
+TasksControllerTest: test_should_get_destroy
+--------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+TasksControllerTest: test_should_get_update
+-------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------------------------------
+TasksControllerTest: test_make_sure_a_user_can_see_their_tasks
+--------------------------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------
+TasksControllerTest: test_should_get_index
+------------------------------------------
+Processing by TasksController#index as HTML
+Redirected to http://test.host/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------------
+TasksControllerTest: test_should_get_create
+-------------------------------------------
+Processing by TasksController#create as HTML
+Redirected to http://test.host/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------
+TasksControllerTest: test_should_get_show
+-----------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+----------------------------------------
+TasksControllerTest: test_should_get_new
+----------------------------------------
+Processing by TasksController#new as HTML
+Redirected to http://test.host/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------
+TasksControllerTest: test_should_get_edit
+-----------------------------------------
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+---------------------------------------------------------------------------
+TasksControllerTest: test_make_sure_a_user_can't_see_another_person's_tasks
+---------------------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------
+UserTest: test_a_user_must_have_a_valid_email
+---------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------
+UserTest: test_a_user_must_have_a_uid
+-------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------
+UserTest: test_a_user_must_have_a_name
+--------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------
+UserTest: test_a_user_must_have_an_avatar
+-----------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "tasks"[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (1, '123', 'Ada', 'github', 'ada@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:25:49')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (2, '456', 'Babbage', 'github', 'babbage@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:25:49')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (3, '345', NULL, 'github', 'test@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:25:49')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (4, '435', 'Test', 'github', NULL, 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:25:49')
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (5, '435', 'Test', 'github', 'dsgfdgdfg', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:25:49')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (6, '768', 'Test', 'github', 'test1@me.com', NULL, '2016-09-26 12:57:50.000000', '2016-10-23 20:25:49')
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (7, NULL, 'Test', 'github', 'test2@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:25:49')[0m
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------
+PagesControllerTest: test_should_get_index
+------------------------------------------
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 237ms (Views: 236.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+TasksControllerTest: test_should_get_update
+-------------------------------------------
+Processing by TasksController#create as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to http://test.host/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------------------------------------
+TasksControllerTest: test_make_sure_a_user_can't_see_another_person's_tasks
+---------------------------------------------------------------------------
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------------
+TasksControllerTest: test_should_get_destroy
+--------------------------------------------
+Processing by TasksController#create as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to http://test.host/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+----------------------------------------
+TasksControllerTest: test_should_get_new
+----------------------------------------
+Processing by TasksController#create as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to http://test.host/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+Processing by TasksController#new as HTML
+Redirected to http://test.host/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+-------------------------------------------
+TasksControllerTest: test_should_get_create
+-------------------------------------------
+Processing by TasksController#create as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to http://test.host/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+Processing by TasksController#create as HTML
+Redirected to http://test.host/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------------------------------
+TasksControllerTest: test_make_sure_a_user_can_see_their_tasks
+--------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------
+TasksControllerTest: test_should_get_index
+------------------------------------------
+Processing by TasksController#create as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to http://test.host/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+Processing by TasksController#index as HTML
+Redirected to http://test.host/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------
+TasksControllerTest: test_should_get_edit
+-----------------------------------------
+Processing by TasksController#create as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to http://test.host/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------
+TasksControllerTest: test_should_get_show
+-----------------------------------------
+Processing by TasksController#create as HTML
+  Parameters: {"provider"=>"github"}
+Redirected to http://test.host/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------------
+SessionsControllerTest: test_can_create_a_user
+----------------------------------------------
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"github"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? AND "users"."provider" = ? LIMIT 1[0m  [["uid", "123545"], ["provider", "github"]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+UsersControllerTest: test_should_get_create
+-------------------------------------------
+Processing by UsersController#create as HTML
+  Rendered users/create.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------------
+UsersControllerTest: test_should_get_destroy
+--------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------
+UsersControllerTest: test_should_get_show
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------
+UsersControllerTest: test_should_get_edit
+-----------------------------------------
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+UsersControllerTest: test_should_get_update
+-------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+------------------------------------------
+UsersControllerTest: test_should_get_index
+------------------------------------------
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------
+UsersControllerTest: test_should_get_new
+----------------------------------------
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------
+UserTest: test_a_user_must_have_a_valid_email
+---------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------
+UserTest: test_a_user_must_have_a_name
+--------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+-------------------------------------
+UserTest: test_a_user_must_have_a_uid
+-------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------
+UserTest: test_a_user_must_have_an_avatar
+-----------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "tasks"[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (1, '123', 'Ada', 'github', 'ada@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:26:26')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (2, '456', 'Babbage', 'github', 'babbage@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:26:26')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (3, '345', NULL, 'github', 'test@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:26:26')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (4, '435', 'Test', 'github', NULL, 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:26:26')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (5, '435', 'Test', 'github', 'dsgfdgdfg', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:26:26')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (6, '768', 'Test', 'github', 'test1@me.com', NULL, '2016-09-26 12:57:50.000000', '2016-10-23 20:26:26')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (7, NULL, 'Test', 'github', 'test2@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:26:26')[0m
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------------------------------------
+TasksControllerTest: test_make_sure_a_user_can't_see_another_person's_tasks
+---------------------------------------------------------------------------
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------------------------------
+TasksControllerTest: test_make_sure_a_user_can_see_their_tasks
+--------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------
+UserTest: test_a_user_must_have_a_valid_email
+---------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------
+UserTest: test_a_user_must_have_a_name
+--------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------
+UserTest: test_a_user_must_have_a_uid
+-------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------
+UserTest: test_a_user_must_have_an_avatar
+-----------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------
+UsersControllerTest: test_should_get_index
+------------------------------------------
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 246ms (Views: 245.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------------
+UsersControllerTest: test_should_get_update
+-------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------------
+UsersControllerTest: test_should_get_destroy
+--------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------
+UsersControllerTest: test_should_get_edit
+-----------------------------------------
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+----------------------------------------
+UsersControllerTest: test_should_get_new
+----------------------------------------
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 6ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------
+UsersControllerTest: test_should_get_show
+-----------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------------
+UsersControllerTest: test_should_get_create
+-------------------------------------------
+Processing by UsersController#create as HTML
+  Rendered users/create.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+----------------------------------------------
+SessionsControllerTest: test_can_create_a_user
+----------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"github"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? AND "users"."provider" = ? LIMIT 1  [["uid", "123545"], ["provider", "github"]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------
+PagesControllerTest: test_should_get_index
+------------------------------------------
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "tasks"[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (1, '123', 'Ada', 'github', 'ada@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:27:02')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (2, '456', 'Babbage', 'github', 'babbage@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:27:02')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (3, '345', NULL, 'github', 'test@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:27:02')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (4, '435', 'Test', 'github', NULL, 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:27:02')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (5, '435', 'Test', 'github', 'dsgfdgdfg', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:27:02')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (6, '768', 'Test', 'github', 'test1@me.com', NULL, '2016-09-26 12:57:50.000000', '2016-10-23 20:27:02')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (7, NULL, 'Test', 'github', 'test2@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:27:02')[0m
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------------------------------------
+TasksControllerTest: test_make_sure_a_user_can't_see_another_person's_tasks
+---------------------------------------------------------------------------
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------------------------------
+TasksControllerTest: test_make_sure_a_user_can_see_their_tasks
+--------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+------------------------------------------
+PagesControllerTest: test_should_get_index
+------------------------------------------
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 228ms (Views: 228.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------
+UserTest: test_a_user_must_have_an_avatar
+-----------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------
+UserTest: test_a_user_must_have_a_name
+--------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------
+UserTest: test_a_user_must_have_a_uid
+-------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------
+UserTest: test_a_user_must_have_a_valid_email
+---------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+----------------------------------------------
+SessionsControllerTest: test_can_create_a_user
+----------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"github"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? AND "users"."provider" = ? LIMIT 1  [["uid", "123545"], ["provider", "github"]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "tasks"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "tasks" ("title", "description", "completed_at", "created_at", "updated_at", "id", "user_id") VALUES ('Tasky Numero Uno', 'The first task', '2016-09-28 16:23:11.000000', '2016-10-23 20:27:23', '2016-10-23 20:27:23', 280906519, 225478506)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "tasks" ("title", "description", "created_at", "updated_at", "id", "user_id") VALUES ('Make the first computer', 'Build it!', '2016-10-23 20:27:23', '2016-10-23 20:27:23', 66162191, 776047689)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (1, '123', 'Ada', 'github', 'ada@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:27:23')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (2, '456', 'Babbage', 'github', 'babbage@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:27:23')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (3, '345', NULL, 'github', 'test@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:27:23')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (4, '435', 'Test', 'github', NULL, 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:27:23')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (5, '435', 'Test', 'github', 'dsgfdgdfg', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:27:23')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (6, '768', 'Test', 'github', 'test1@me.com', NULL, '2016-09-26 12:57:50.000000', '2016-10-23 20:27:23')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (7, NULL, 'Test', 'github', 'test2@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:27:23')[0m
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------
+UserTest: test_a_user_must_have_a_valid_email
+---------------------------------------------
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------
+UserTest: test_a_user_must_have_a_name
+--------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------
+UserTest: test_a_user_must_have_a_uid
+-------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------
+UserTest: test_a_user_must_have_an_avatar
+-----------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------
+PagesControllerTest: test_should_get_index
+------------------------------------------
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 244ms (Views: 243.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+---------------------------------------------------------------------------
+TasksControllerTest: test_make_sure_a_user_can't_see_another_person's_tasks
+---------------------------------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mTask Load (0.3ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 280906519]]
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"280906519"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mTask Load (0.0ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 280906519]]
+Redirected to http://test.host/
+Filter chain halted as :find_task rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------------------------------
+TasksControllerTest: test_make_sure_a_user_can_see_their_tasks
+--------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTask Load (0.0ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 280906519]]
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"280906519"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTask Load (0.0ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 280906519]]
+Redirected to http://test.host/
+Filter chain halted as :find_task rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+----------------------------------------------
+SessionsControllerTest: test_can_create_a_user
+----------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"github"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? AND "users"."provider" = ? LIMIT 1  [["uid", "123545"], ["provider", "github"]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "tasks"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "tasks" ("title", "description", "completed_at", "created_at", "updated_at", "id", "user_id") VALUES ('Tasky Numero Uno', 'The first task', '2016-09-28 16:23:11.000000', '2016-10-23 20:33:11', '2016-10-23 20:33:11', 280906519, 225478506)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "tasks" ("title", "description", "created_at", "updated_at", "id", "user_id") VALUES ('Make the first computer', 'Build it!', '2016-10-23 20:33:11', '2016-10-23 20:33:11', 66162191, 776047689)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (1, '123', 'Ada', 'github', 'ada@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:33:11')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (2, '456', 'Babbage', 'github', 'babbage@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:33:11')
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (3, '345', NULL, 'github', 'test@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:33:11')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (4, '435', 'Test', 'github', NULL, 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:33:11')
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (5, '435', 'Test', 'github', 'dsgfdgdfg', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:33:11')[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (6, '768', 'Test', 'github', 'test1@me.com', NULL, '2016-09-26 12:57:50.000000', '2016-10-23 20:33:11')
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (7, NULL, 'Test', 'github', 'test2@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:33:11')[0m
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------
+UserTest: test_a_user_must_have_a_uid
+-------------------------------------
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+--------------------------------------
+UserTest: test_a_user_must_have_a_name
+--------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------
+UserTest: test_a_user_must_have_an_avatar
+-----------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+---------------------------------------------
+UserTest: test_a_user_must_have_a_valid_email
+---------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+---------------------------------------------------------------------------
+TasksControllerTest: test_make_sure_a_user_can't_see_another_person's_tasks
+---------------------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 280906519]]
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"280906519"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mTask Load (0.0ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 280906519]]
+Redirected to http://test.host/
+Filter chain halted as :find_task rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+--------------------------------------------------------------
+TasksControllerTest: test_make_sure_a_user_can_see_their_tasks
+--------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTask Load (0.0ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 280906519]]
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"280906519"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 280906519]]
+Redirected to http://test.host/
+Filter chain halted as :find_task rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+----------------------------------------------
+SessionsControllerTest: test_can_create_a_user
+----------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"github"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? AND "users"."provider" = ? LIMIT 1  [["uid", "123545"], ["provider", "github"]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------
+PagesControllerTest: test_should_get_index
+------------------------------------------
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 220ms (Views: 219.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "tasks"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "tasks" ("title", "description", "completed_at", "created_at", "updated_at", "id", "user_id") VALUES ('Tasky Numero Uno', 'The first task', '2016-09-28 16:23:11.000000', '2016-10-23 20:34:37', '2016-10-23 20:34:37', 280906519, 225478506)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "tasks" ("title", "description", "created_at", "updated_at", "id", "user_id") VALUES ('Make the first computer', 'Build it!', '2016-10-23 20:34:37', '2016-10-23 20:34:37', 66162191, 776047689)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (1, '123', 'Ada', 'github', 'ada@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:34:37')[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (2, '456', 'Babbage', 'github', 'babbage@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:34:37')
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (3, '345', NULL, 'github', 'test@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:34:37')[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (4, '435', 'Test', 'github', NULL, 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:34:37')
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (5, '435', 'Test', 'github', 'dsgfdgdfg', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:34:37')[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (6, '768', 'Test', 'github', 'test1@me.com', NULL, '2016-09-26 12:57:50.000000', '2016-10-23 20:34:37')
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (7, NULL, 'Test', 'github', 'test2@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:34:37')[0m
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------------
+SessionsControllerTest: test_can_create_a_user
+----------------------------------------------
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"github"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? AND "users"."provider" = ? LIMIT 1[0m  [["uid", "123545"], ["provider", "github"]]
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------
+UserTest: test_a_user_must_have_a_name
+--------------------------------------
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------
+UserTest: test_a_user_must_have_a_uid
+-------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------
+UserTest: test_a_user_must_have_an_avatar
+-----------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------
+UserTest: test_a_user_must_have_a_valid_email
+---------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+---------------------------------------------------------------------------
+TasksControllerTest: test_make_sure_a_user_can't_see_another_person's_tasks
+---------------------------------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 280906519]]
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"280906519"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mTask Load (0.0ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 280906519]]
+Redirected to http://test.host/
+Filter chain halted as :find_task rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------------------------------
+TasksControllerTest: test_make_sure_a_user_can_see_their_tasks
+--------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 280906519]]
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"280906519"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTask Load (0.0ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 280906519]]
+Redirected to http://test.host/
+Filter chain halted as :find_task rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+------------------------------------------
+PagesControllerTest: test_should_get_index
+------------------------------------------
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 215ms (Views: 214.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "tasks"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "tasks" ("title", "description", "user_id", "completed_at", "created_at", "updated_at", "id") VALUES ('Tasky Numero Uno', 'The first task', 10, '2016-09-28 16:23:11.000000', '2016-10-23 20:35:38', '2016-10-23 20:35:38', 280906519)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "tasks" ("title", "description", "user_id", "completed_at", "created_at", "updated_at", "id") VALUES ('Make the first computer', 'Build it!', 20, '2016-09-28 16:23:11.000000', '2016-10-23 20:35:38', '2016-10-23 20:35:38', 66162191)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (10, '123', 'Ada', 'github', 'ada@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:35:38')[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (20, '456', 'Babbage', 'github', 'babbage@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:35:38')
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (3, '345', NULL, 'github', 'test@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:35:38')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (4, '435', 'Test', 'github', NULL, 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:35:38')
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (5, '435', 'Test', 'github', 'dsgfdgdfg', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:35:38')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (6, '768', 'Test', 'github', 'test1@me.com', NULL, '2016-09-26 12:57:50.000000', '2016-10-23 20:35:38')
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "users" ("id", "uid", "name", "provider", "email", "avatar", "created_at", "updated_at") VALUES (7, NULL, 'Test', 'github', 'test2@me.com', 'test.jpg', '2016-09-26 12:57:50.000000', '2016-10-23 20:35:38')[0m
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------
+UserTest: test_a_user_must_have_a_uid
+-------------------------------------
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+---------------------------------------------
+UserTest: test_a_user_must_have_a_valid_email
+---------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 20]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------
+UserTest: test_a_user_must_have_an_avatar
+-----------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------
+UserTest: test_a_user_must_have_a_name
+--------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+---------------------------------------------------------------------------
+TasksControllerTest: test_make_sure_a_user_can't_see_another_person's_tasks
+---------------------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 20]]
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 280906519]]
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"280906519"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 20]]
+  [1m[35mTask Load (0.0ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 280906519]]
+Redirected to http://test.host/
+Filter chain halted as :find_task rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------------------------------
+TasksControllerTest: test_make_sure_a_user_can_see_their_tasks
+--------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mTask Load (0.0ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 280906519]]
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"280906519"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mTask Load (0.0ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 280906519]]
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 280906519]]
+  Rendered tasks/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 234ms (Views: 232.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------------
+SessionsControllerTest: test_can_create_a_user
+----------------------------------------------
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"github"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? AND "users"."provider" = ? LIMIT 1[0m  [["uid", "123545"], ["provider", "github"]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+------------------------------------------
+PagesControllerTest: test_should_get_index
+------------------------------------------
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
