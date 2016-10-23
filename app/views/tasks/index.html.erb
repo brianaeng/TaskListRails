@@ -1,17 +1,17 @@
-<h1>Your Tasks</h1>
 <article>
-  <ol>
-  <% @tasks.each do |task| %>
-    <li>
-      <% if task[:completed_at] == nil %>
-        <%= link_to(task.title, show_path(task[:id])) %>
-        <!-- the commented out buttons are to show I could add them (per the instructions) but I didn't like how it looked so I moved them to the show view -->
-        <%# button_to("😸", button_path(task[:id]), method: :patch) %>
-      <% else %>
-        <div class='done'><%= link_to(task.title, show_path(task[:id])) %></div>
-        <%# button_to("😸", button_path(task[:id]), method: :patch) %>
-      <% end %>
-    </li>
-  <% end %>
-  </ol>
+  <h1>Your Tasks</h1>
+    <ol>
+    <% @tasks.each do |task| %>
+      <li>
+        <% if task[:completed_at] == nil %>
+          <%= link_to(task.title, show_path(task[:id])) %>
+          <!-- the commented out buttons are to show I could add them (per the instructions) but I didn't like how it looked so I moved them to the show view -->
+          <%# button_to("😸", button_path(task[:id]), method: :patch) %>
+        <% else %>
+          <div class='done'><%= link_to(task.title, show_path(task[:id])) %></div>
+          <%# button_to("😸", button_path(task[:id]), method: :patch) %>
+        <% end %>
+      </li>
+    <% end %>
+    </ol>
 </article>

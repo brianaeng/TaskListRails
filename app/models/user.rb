@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  validates_presence_of :name, :email, :uid, :avatar
+
+  validate :valid_email
+
   def self.build_from_github(auth_hash)
     user       = User.new
     user.uid   = auth_hash[:uid]
@@ -9,5 +13,11 @@ class User < ActiveRecord::Base
     user.authenticated = true
 
     return user
+  end
+
+  def valid_email
+    if self.email != nil && !self.email.include?("@")
+      errors.add(:users, "Invalid email")
+    end
   end
 end
