@@ -1,5 +1,7 @@
 <%# form_for @task, url: @path do |f| %>
 <%= form_for @task, url: action_name do |f| %>
+  <%= f.hidden_field :user_id, value: session[:user_id] %>
+
   <%= f.label :title %>
   <%= f.text_field :title%>
 

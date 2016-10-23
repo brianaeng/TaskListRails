@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   before_action :find_task, only: [:show, :edit, :update, :destroy, :complete_toggle]
 
   def index
-    @tasks = Task.all
+    @tasks = Task.where(user_id: session[:user_id])
   end
 
   def show
@@ -56,10 +56,14 @@ class TasksController < ApplicationController
   private
   #This can be for security purposes (probably more important for user)
   def task_params
-    params.require(:task).permit(:title, :description, :completed_at)
+    params.require(:task).permit(:title, :description, :completed_at, :user_id)
   end
 
   def find_task
-    @task = Task.find(params[:id])
+    if Task.find(params[:id]).user_id == session[:user_id]
+      @task = Task.find(params[:id])
+    else
+      redirect_to root_path
+    end
   end
 end
