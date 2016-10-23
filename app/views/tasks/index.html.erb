@@ -1,17 +1,22 @@
-<h1>Your Tasks</h1>
 <article>
-  <ol>
-  <% @tasks.each do |task| %>
-    <li>
-      <% if task[:completed_at] == nil %>
-        <%= link_to(task.title, show_path(task[:id])) %>
-        <!-- the commented out buttons are to show I could add them (per the instructions) but I didn't like how it looked so I moved them to the show view -->
-        <%# button_to("😸", button_path(task[:id]), method: :patch) %>
-      <% else %>
-        <div class='done'><%= link_to(task.title, show_path(task[:id])) %></div>
-        <%# button_to("😸", button_path(task[:id]), method: :patch) %>
-      <% end %>
-    </li>
+  <h1>Welcome to Task List</h1>
+  <% if session[:user_id] == nil %>
+    <p class="center">Please log in via Github.</p>
+  <% else %>
+  <h1>Your Tasks</h1>
+    <ol>
+    <% @tasks.each do |task| %>
+      <li>
+        <% if task[:completed_at] == nil %>
+          <%= link_to(task.title, show_path(task[:id])) %>
+          <!-- the commented out buttons are to show I could add them (per the instructions) but I didn't like how it looked so I moved them to the show view -->
+          <%# button_to("😸", button_path(task[:id]), method: :patch) %>
+        <% else %>
+          <div class='done'><%= link_to(task.title, show_path(task[:id])) %></div>
+          <%# button_to("😸", button_path(task[:id]), method: :patch) %>
+        <% end %>
+      </li>
+    <% end %>
+    </ol>
   <% end %>
-  </ol>
 </article>

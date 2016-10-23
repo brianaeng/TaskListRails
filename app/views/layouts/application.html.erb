@@ -9,10 +9,12 @@
 <body>
   <header>
     <nav>
+    <% if session[:user_id] != nil %>
       <div class="site-nav">
         <%= link_to_unless_current("Home", root_path) %>
         <%= link_to_unless_current("Add New Task", new_path) %>
       </div>
+    <% end %>
 
       <div class="user-nav">
         <% if session[:user_id] == nil %>
