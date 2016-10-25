@@ -4,6 +4,10 @@ class UsersController < ApplicationController
 
   def show
     find_user
+
+    if @user.id != session[:user_id]
+      redirect_to index_path
+    end
   end
 
   def new
